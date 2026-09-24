@@ -26,7 +26,7 @@ async function check({ country, visa_apply_url: url }) {
     const status = s < 400 ? "OK" : (s === 403 || s === 429) ? "BLOCKED (test in phone browser)" : "BROKEN";
     return { country, url, code: s, status };
   } catch (e) {
-    const why = e.name === "AbortError" ? "TIMEOUT" : "ERROR " + (e.cause?.code || e.message);
+    const why = e.name === "AbortError" ? "TIMEOUT" : "UNVERIFIED " + (e.cause?.code || e.message);
     return { country, url, code: "", status: why };
   }
 }
@@ -46,13 +46,18 @@ await Promise.all(Array.from({ length: 8 }, worker));
 results.sort((a, b) => a.country.localeCompare(b.country));
 const q = s => `"${String(s).replaceAll('"', '""')}"`;
 writeFileSync("link-report.csv",
-  "country,status,code,url\n" + results.map(r => [r.country, r.status, r.code, r.url].map(q).join(",")).join("\n"));
+  "country,status,code,url
+" + results.map(r => [r.country, r.status, r.code, r.url].map(q).join(",")).join("
+"));
 
 const bad = results.filter(r => r.status !== "OK");
-console.log(`\nOK: ${results.length - bad.length}   Need fixing/testing: ${bad.length}`);
+console.log(`
+OK: ${results.length - bad.length}   Need fixing/testing: ${bad.length}`);
 bad.forEach(r => console.log(`- ${r.country}: ${r.status} ${r.code} ${r.url}`));
 const hardFailures = results.filter(r => r.status === "BROKEN" || r.status === "ERROR" || r.status === "TIMEOUT");
-console.log(`\nHard failures: ${hardFailures.length}`);
+console.log(`
+Hard failures: ${hardFailures.length}`);
 hardFailures.forEach(r => console.log(`- ${r.country}: ${r.status} ${r.code} ${r.url}`));
-console.log("\nFull list saved in link-report.csv");
+console.log("
+Full list saved in link-report.csv");
 if (hardFailures.length) process.exitCode = 1;
