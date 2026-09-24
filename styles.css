@@ -1,0 +1,103 @@
+
+:root{
+  --bg:#f5f7fb;
+  --card:#ffffff;
+  --text:#172033;
+  --muted:#687386;
+  --border:#e4e8f0;
+  --accent:#4f46e5;
+  --accent2:#3730a3;
+  --chip:#eef0ff;
+  --shadow:0 8px 24px rgba(24,35,58,.08);
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
+.app{max-width:1100px;margin:0 auto;padding:24px 16px 48px}
+.hero{
+  display:flex;justify-content:space-between;align-items:center;gap:16px;
+  margin-bottom:20px;
+}
+.brand{display:flex;align-items:center;gap:12px}
+.brand-logo{width:56px;height:56px;object-fit:cover;border-radius:16px;box-shadow:0 6px 18px rgba(24,35,58,.12)}
+h1{margin:0;font-size:26px}
+.hero p{margin:2px 0 0;color:var(--muted)}
+.count{
+  background:var(--chip);color:var(--accent2);padding:9px 12px;border-radius:999px;
+  font-weight:700;white-space:nowrap
+}
+.toolbar{display:flex;gap:10px;margin-bottom:10px}
+.search-wrap{
+  flex:1;display:flex;align-items:center;gap:8px;background:var(--card);
+  border:1px solid var(--border);border-radius:14px;padding:0 13px;box-shadow:var(--shadow)
+}
+.search-wrap input{
+  width:100%;border:0;outline:0;background:transparent;padding:14px 0;
+  font-size:16px;color:var(--text)
+}
+button{
+  border:0;border-radius:12px;padding:0 16px;font-weight:700;cursor:pointer;
+  font-size:14px
+}
+.secondary{background:var(--card);border:1px solid var(--border);color:var(--text)}
+.hint{color:var(--muted);margin:0 0 20px}
+.grid{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px
+}
+.card{
+  background:var(--card);border:1px solid var(--border);border-radius:16px;
+  padding:16px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:14px
+}
+.country{
+  display:flex;align-items:center;gap:11px;min-width:0
+}
+.flag{font-size:31px;line-height:1}
+.name{font-weight:800;font-size:17px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.url{
+  color:var(--muted);font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis
+}
+.apply{
+  display:inline-flex;justify-content:center;align-items:center;
+  min-height:42px;border-radius:11px;text-decoration:none;background:var(--accent);color:white;
+  font-weight:800
+}
+.apply:hover{background:var(--accent2)}
+.empty{text-align:center;color:var(--muted);padding:40px 0}
+footer{margin-top:28px;text-align:center;color:var(--muted);font-size:13px}
+footer p{margin:5px 0}
+.small{font-size:12px}
+@media (max-width:600px){
+  .hero{align-items:flex-start;flex-direction:column}
+  .toolbar{flex-direction:column}
+  .secondary{height:44px}
+}
+
+[data-theme="dark"]{
+  --bg:#0f1524;--card:#182036;--text:#e8ecf5;--muted:#9aa6bd;--border:#2a3550;
+  --accent:#6c63ff;--accent2:#8b84ff;--chip:#232c4a;--shadow:0 8px 24px rgba(0,0,0,.35);
+}
+.hero-right{display:flex;align-items:center;gap:10px}
+.icon-btn{width:40px;height:40px;padding:0;background:var(--card);color:var(--text);border:1px solid var(--border);font-size:18px}
+.chips{display:flex;gap:8px;overflow-x:auto;padding:2px 0 12px}
+.chip{flex:none;min-height:36px;background:var(--card);color:var(--text);border:1px solid var(--border)}
+.chip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+.star{margin-inline-start:auto;flex:none;width:38px;height:38px;padding:0;background:transparent;color:#e0a800;font-size:24px}
+.note{margin:0;font-size:12px;color:var(--muted);text-align:center}
+.top{position:fixed;inset-inline-end:16px;bottom:16px;width:46px;height:46px;padding:0;border-radius:50%;background:var(--accent);color:#fff;font-size:20px;box-shadow:var(--shadow)}
+.top[hidden]{display:none}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.help{font-size:12px;text-align:center;color:var(--accent2);text-decoration:underline}
+.lang{height:40px;border-radius:12px;border:1px solid var(--border);background:var(--card);color:var(--text);font-size:14px;padding:0 8px}
+.en{color:var(--muted);font-size:12px}
+.url{text-align:left}
+[dir="rtl"] .hint,[dir="rtl"] footer{text-align:start}
+.tip-link{display:block;margin:0 auto 14px;background:none;color:var(--accent2);text-decoration:underline;font-size:13px;padding:6px}
+.tipdlg{max-width:340px;width:90%;border:1px solid var(--border);border-radius:16px;background:var(--card);color:var(--text);padding:20px}
+.tipdlg::backdrop{background:rgba(0,0,0,.5)}
+.tipdlg h2{margin:0 0 8px;font-size:18px}
+.tipdlg p{margin:0 0 16px;color:var(--muted);line-height:1.5}
+.tipdlg .apply{width:100%;border:0}
