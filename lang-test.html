@@ -1,0 +1,18 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>World Visa – language test</title>
+<style>body{font-family:system-ui,sans-serif;margin:16px;background:#f5f7fb;color:#172033}
+.l{background:#fff;border:1px solid #e4e8f0;border-radius:12px;padding:12px;margin:0 0 12px}
+h2{margin:0 0 8px;font-size:16px}p{margin:4px 0;font-size:14px}b{color:#4f46e5}</style></head><body>
+<h1>World Visa – all texts by language</h1><div id="out"></div>
+<script src="i18n.js"></script><script src="i18n-more.js"></script>
+<script>
+const out=document.getElementById("out");
+for(const [c,name] of Object.entries(WV_LANGS)){
+  const d=WV_I18N[c],div=document.createElement("div");div.className="l";
+  div.lang=c;div.dir=WV_RTL.includes(c)?"rtl":"ltr";
+  const h=document.createElement("h2");h.textContent=name+" ("+c+")";div.append(h);
+  for(const [k,v] of Object.entries(d)){
+    if(typeof v==="function"){var val=v(1)+" / "+v(5)}else val=v;
+    const p=document.createElement("p");const b=document.createElement("b");b.textContent=k+": ";p.append(b,val);div.append(p)}
+  out.append(div)}
+</script></body></html>

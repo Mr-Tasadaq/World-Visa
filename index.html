@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>World Visa — Visa Apply</title>
+  <meta name="description" content="JUNI-AI visa application directory with 195 countries.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app">
+    <header class="hero">
+      <div class="brand">
+        <img class="brand-logo" src="world-visa-logo.webp" width="56" height="56" alt="World Visa logo">
+        <div>
+          <h1>World Visa</h1>
+          <p data-i18n="sub">Visa Apply Directory</p>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="count" id="count">195 countries</div>
+        <select id="lang" class="lang" data-i18n-aria="lang" aria-label="Change language"></select>
+        <button id="theme" class="icon-btn" type="button" aria-label="Switch to dark mode">☾</button>
+      </div>
+    </header>
+
+    <section class="toolbar">
+      <label class="search-wrap" data-i18n-aria="searchLabel" aria-label="Search countries">
+        <span aria-hidden="true">🔎</span>
+        <input id="search" type="search" data-i18n-ph="search" placeholder="Search country..." autocomplete="off">
+      </label>
+      <button id="clear" class="secondary" data-i18n="clear" type="button">Clear</button>
+    </section>
+
+    <div id="regions" class="chips" role="group" data-i18n-aria="regionsLabel" aria-label="Filter by region"></div>
+
+    <p class="hint" data-i18n="hint">
+      Select a country and open its visa application or official visa-information page.
+    </p>
+
+    <section id="grid" class="grid" aria-live="polite"></section>
+    <button id="tipbtn" class="tip-link" type="button" data-i18n="tipLink">Need another language?</button>
+    <dialog id="tipdlg" class="tipdlg">
+      <h2 data-i18n="tipLink">Need another language?</h2>
+      <p data-i18n="tipBody">Use your browser's Translate.</p>
+      <button id="tipclose" class="apply" type="button" data-i18n="close">Close</button>
+    </dialog>
+
+    <p id="empty" class="empty" hidden>No country found.</p>
+
+    <footer>
+      <p data-i18n="f1">World Visa • 195-country visa directory</p>
+      <p class="small" data-i18n="f2">World Visa is a directory. It is not a government website and does not process visas.</p>
+      <p class="small" data-i18n="f3">Always check the destination government/embassy website for the latest requirements before applying.</p>
+    </footer>
+  </main>
+  <button id="top" class="top" type="button" data-i18n-aria="top" aria-label="Back to top" hidden>↑</button>
+
+  <script src="countries.js"></script>
+  <script src="i18n.js"></script>
+  <script src="i18n-more.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
