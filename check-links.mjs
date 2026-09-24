@@ -50,14 +50,15 @@ writeFileSync("link-report.csv",
 " + results.map(r => [r.country, r.status, r.code, r.url].map(q).join(",")).join("
 "));
 
-const bad = results.filter(r => r.status !== "OK");
-console.log(`
-OK: ${results.length - bad.length}   Need fixing/testing: ${bad.length}`);
-bad.forEach(r => console.log(`- ${r.country}: ${r.status} ${r.code} ${r.url}`));
-const hardFailures = results.filter(r => r.status === "BROKEN" || r.status === "ERROR" || r.status === "TIMEOUT");
-console.log(`
-Hard failures: ${hardFailures.length}`);
+const needsTesting = results.filter(r => r.status !== "OK");
+console.log(`\nOK: ${results.length - needsTesting.length}   Need fixing/testing: ${needsTesting.length}`);
+needsTesting.forEach(r => console.log(`- ${r.country}: ${r.status} ${r.code} ${r.url}`));
+
+const hardFailures = results.filter(r => r.status === "BROKEN");
+const unverified = results.filter(r => r.status.startsWith("UNVERIFIED") || r.status === "TIMEOUT");
+console.log(`\nHard HTTP failures: ${hardFailures.length}   Network/unverified: ${unverified.length}`);
 hardFailures.forEach(r => console.log(`- ${r.country}: ${r.status} ${r.code} ${r.url}`));
-console.log("
-Full list saved in link-report.csv");
+unverified.forEach(r => console.log(`- ${r.country}: ${r.status} ${r.code} ${r.url}`));
+
+console.log("\nFull list saved in link-report.csv");
 if (hardFailures.length) process.exitCode = 1;
