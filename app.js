@@ -11,7 +11,25 @@ function save(k, v) { try { localStorage.setItem(k, v); } catch {} }
 let favs;
 try { favs = new Set(JSON.parse(load("wv_favs") || "[]")); } catch { favs = new Set(); }
 
-// ---------- install ----------\naddEventListener("beforeinstallprompt", e => {\n  e.preventDefault();\n  deferredInstallPrompt = e;\n  installBtn.hidden = false;\n});\nif (installBtn) installBtn.addEventListener("click", async () => {\n  if (!deferredInstallPrompt) return;\n  deferredInstallPrompt.prompt();\n  try { await deferredInstallPrompt.userChoice; } catch {}\n  deferredInstallPrompt = null;\n  installBtn.hidden = true;\n});\naddEventListener("appinstalled", () => {\n  deferredInstallPrompt = null;\n  installBtn.hidden = true;\n});\n\n// ---------- language ----------
+// ---------- install ----------
+addEventListener("beforeinstallprompt", e => {
+  e.preventDefault();
+  deferredInstallPrompt = e;
+  if (installBtn) installBtn.hidden = false;
+});
+if (installBtn) installBtn.addEventListener("click", async () => {
+  if (!deferredInstallPrompt) return;
+  deferredInstallPrompt.prompt();
+  try { await deferredInstallPrompt.userChoice; } catch {}
+  deferredInstallPrompt = null;
+  if (installBtn) installBtn.hidden = true;
+});
+addEventListener("appinstalled", () => {
+  deferredInstallPrompt = null;
+  if (installBtn) installBtn.hidden = true;
+});
+
+// ---------- language ----------
 const t = (key, vars = {}) => {
   let s = (WV_I18N[lang] || {})[key] ?? WV_I18N.en[key];
   if (typeof s !== "string") return s;
