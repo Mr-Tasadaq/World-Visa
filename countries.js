@@ -1137,7 +1137,7 @@ window.JUNI_VISA_COUNTRIES = [
     "flag": "🇻🇦",
     "country": "Vatican City",
     "region": "Europe",
-    "visa_apply_url": "https://vistoperitalia.esteri.it/home/en"
+    "visa_apply_url": "https://www.esteri.it/en/servizi-opportunita/ingressosoggiornoinitalia/visto_ingresso/"
   },
   {
     "flag": "🇻🇪",
