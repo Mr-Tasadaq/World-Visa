@@ -51,4 +51,8 @@ writeFileSync("link-report.csv",
 const bad = results.filter(r => r.status !== "OK");
 console.log(`\nOK: ${results.length - bad.length}   Need fixing/testing: ${bad.length}`);
 bad.forEach(r => console.log(`- ${r.country}: ${r.status} ${r.code} ${r.url}`));
+const hardFailures = results.filter(r => r.status === "BROKEN" || r.status === "ERROR" || r.status === "TIMEOUT");
+console.log(`\nHard failures: ${hardFailures.length}`);
+hardFailures.forEach(r => console.log(`- ${r.country}: ${r.status} ${r.code} ${r.url}`));
 console.log("\nFull list saved in link-report.csv");
+if (hardFailures.length) process.exitCode = 1;
