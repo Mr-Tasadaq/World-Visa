@@ -3,7 +3,7 @@ window.JUNI_VISA_COUNTRIES = [
     "flag": "🇦🇫",
     "country": "Afghanistan",
     "region": "Asia",
-    "visa_apply_url": "https://mfa.gov.af/en/visa"
+    "visa_apply_url": "https://mfa.gov.af/en/page/38993"
   },
   {
     "flag": "🇦🇱",
@@ -57,7 +57,7 @@ window.JUNI_VISA_COUNTRIES = [
     "flag": "🇦🇹",
     "country": "Austria",
     "region": "Europe",
-    "visa_apply_url": "https://www.bmeia.gv.at/en/austrian-embassy/visa"
+    "visa_apply_url": "https://www.bmeia.gv.at/en/travel-stay/entrance-and-residence-in-austria/visa"
   },
   {
     "flag": "🇦🇿",
@@ -117,13 +117,13 @@ window.JUNI_VISA_COUNTRIES = [
     "flag": "🇧🇹",
     "country": "Bhutan",
     "region": "Asia",
-    "visa_apply_url": "https://immi.gov.bt/visa/"
+    "visa_apply_url": "https://www.immi.gov.bt/"
   },
   {
     "flag": "🇧🇴",
     "country": "Bolivia",
     "region": "Americas",
-    "visa_apply_url": "https://cancilleria.gob.bo/mre/visas/"
+    "visa_apply_url": "https://consulados.cancilleria.gob.bo/base/visas/"
   },
   {
     "flag": "🇧🇦",
@@ -147,13 +147,13 @@ window.JUNI_VISA_COUNTRIES = [
     "flag": "🇧🇳",
     "country": "Brunei",
     "region": "Asia",
-    "visa_apply_url": "https://www.immigration.gov.bn/en/SitePages/Visa.aspx"
+    "visa_apply_url": "https://www.immigration.gov.bn/visa-lawatan-diplomatik/"
   },
   {
     "flag": "🇧🇬",
     "country": "Bulgaria",
     "region": "Europe",
-    "visa_apply_url": "https://www.mfa.bg/en/services-travel/consular-services/visa"
+    "visa_apply_url": "https://www.mfa.bg/en/services-travel/consular-services/travel-bulgaria/visa-bulgaria"
   },
   {
     "flag": "🇧🇫",
@@ -279,7 +279,7 @@ window.JUNI_VISA_COUNTRIES = [
     "flag": "🇩🇰",
     "country": "Denmark",
     "region": "Europe",
-    "visa_apply_url": "https://nyidanmark.dk/en-GB/You-want-to-apply/Visa-to-Denmark"
+    "visa_apply_url": "https://nyidanmark.dk/en-GB/You-want-to-apply/Short-stay-visa/Private-visits-and-tourist-visits-"
   },
   {
     "flag": "🇩🇯",
@@ -291,19 +291,19 @@ window.JUNI_VISA_COUNTRIES = [
     "flag": "🇩🇲",
     "country": "Dominica",
     "region": "Americas",
-    "visa_apply_url": "https://dominica.gov.dm/services/visas"
+    "visa_apply_url": "https://www.dominica.gov.dm/services/passports-and-travel-documents-non-nationals/how-do-i-apply-for-a-visitor-s-visa"
   },
   {
     "flag": "🇩🇴",
     "country": "Dominican Republic",
     "region": "Americas",
-    "visa_apply_url": "https://mirex.gob.do/visas/"
+    "visa_apply_url": "https://servicios360.mirex.gob.do/visas/"
   },
   {
     "flag": "🇪🇨",
     "country": "Ecuador",
     "region": "Americas",
-    "visa_apply_url": "https://www.gob.ec/mremh/tramites"
+    "visa_apply_url": "https://www.cancilleria.gob.ec/washington/visas-espanol-english/"
   },
   {
     "flag": "🇪🇬",
@@ -333,7 +333,7 @@ window.JUNI_VISA_COUNTRIES = [
     "flag": "🇪🇪",
     "country": "Estonia",
     "region": "Europe",
-    "visa_apply_url": "https://vm.ee/en/consular-visa-and-travel-information/visa"
+    "visa_apply_url": "https://www.vm.ee/en/consular-visa-and-travel-information/visa-information/application-schengen-visa"
   },
   {
     "flag": "🇸🇿",
@@ -453,7 +453,7 @@ window.JUNI_VISA_COUNTRIES = [
     "flag": "🇮🇸",
     "country": "Iceland",
     "region": "Europe",
-    "visa_apply_url": "https://island.is/en/visas"
+    "visa_apply_url": "https://island.is/en/get-a-visa"
   },
   {
     "flag": "🇮🇳",
@@ -501,7 +501,7 @@ window.JUNI_VISA_COUNTRIES = [
     "flag": "🇯🇲",
     "country": "Jamaica",
     "region": "Americas",
-    "visa_apply_url": "https://www.pica.gov.jm/immigration/visas/"
+    "visa_apply_url": "https://www.pica.gov.jm/"
   },
   {
     "flag": "🇯🇵",
@@ -567,7 +567,7 @@ window.JUNI_VISA_COUNTRIES = [
     "flag": "🇱🇻",
     "country": "Latvia",
     "region": "Europe",
-    "visa_apply_url": "https://www.mfa.gov.lv/en/visa"
+    "visa_apply_url": "https://www.mfa.gov.lv/en/applying-visa"
   },
   {
     "flag": "🇱🇧",
@@ -609,7 +609,7 @@ window.JUNI_VISA_COUNTRIES = [
     "flag": "🇱🇺",
     "country": "Luxembourg",
     "region": "Europe",
-    "visa_apply_url": "https://guichet.public.lu/en/citoyens/immigration/plus-3-mois/entree/visa.html"
+    "visa_apply_url": "https://guichet.public.lu/en/citoyens/immigration/moins-3-mois/ressortissant-tiers/entree-visa.html"
   },
   {
     "flag": "🇲🇬",
@@ -669,7 +669,7 @@ window.JUNI_VISA_COUNTRIES = [
     "flag": "🇲🇽",
     "country": "Mexico",
     "region": "Americas",
-    "visa_apply_url": "https://www.gob.mx/sre/documentos/visas-para-extranjeros"
+    "visa_apply_url": "https://www.gob.mx/sre/acciones-y-programas/visas-para-extranjeros-8036"
   },
   {
     "flag": "🇫🇲",
@@ -771,7 +771,7 @@ window.JUNI_VISA_COUNTRIES = [
     "flag": "🇲🇰",
     "country": "North Macedonia",
     "region": "Europe",
-    "visa_apply_url": "https://mfa.gov.mk/en/page/13/visa-regime"
+    "visa_apply_url": "https://mfa.gov.mk/en-GB/konzularni-uslugi/informacii-za-vlez-vo-rsm"
   },
   {
     "flag": "🇳🇴",
@@ -825,7 +825,7 @@ window.JUNI_VISA_COUNTRIES = [
     "flag": "🇵🇪",
     "country": "Peru",
     "region": "Americas",
-    "visa_apply_url": "https://www.gob.pe/institucion/rree/tema/visas"
+    "visa_apply_url": "https://www.gob.pe/en/36240-apply-for-a-tourist-visa-to-enter-peru"
   },
   {
     "flag": "🇵🇭",
@@ -969,7 +969,7 @@ window.JUNI_VISA_COUNTRIES = [
     "flag": "🇿🇦",
     "country": "South Africa",
     "region": "Africa",
-    "visa_apply_url": "https://www.dha.gov.za/index.php/types-of-visas"
+    "visa_apply_url": "https://www.gov.za/services/temporary-residence/visa"
   },
   {
     "flag": "🇸🇸",
@@ -981,7 +981,7 @@ window.JUNI_VISA_COUNTRIES = [
     "flag": "🇪🇸",
     "country": "Spain",
     "region": "Europe",
-    "visa_apply_url": "https://www.exteriores.gob.es/en/ServiciosAlCiudadano/Paginas/Visados.aspx"
+    "visa_apply_url": "https://www.exteriores.gob.es/Consulados/sanfrancisco/en/ServiciosConsulares/Paginas/Consular/Visados-Schengen.aspx"
   },
   {
     "flag": "🇱🇰",
@@ -1005,13 +1005,13 @@ window.JUNI_VISA_COUNTRIES = [
     "flag": "🇸🇪",
     "country": "Sweden",
     "region": "Europe",
-    "visa_apply_url": "https://www.migrationsverket.se/en/you-want-to-apply/visit-sweden.html"
+    "visa_apply_url": "https://www.migrationsverket.se/en/you-want-to-apply/visiting-sweden.html"
   },
   {
     "flag": "🇨🇭",
     "country": "Switzerland",
     "region": "Europe",
-    "visa_apply_url": "https://www.sem.admin.ch/sem/en/home/themen/einreise/visumantragsverfahren.html"
+    "visa_apply_url": "https://www.sem.admin.ch/sem/en/home/themen/einreise/faq.html"
   },
   {
     "flag": "🇸🇾",
@@ -1077,7 +1077,7 @@ window.JUNI_VISA_COUNTRIES = [
     "flag": "🇹🇲",
     "country": "Turkmenistan",
     "region": "Asia",
-    "visa_apply_url": "https://mfa.gov.tm/en/consular-services/visa/"
+    "visa_apply_url": "https://mfa.gov.tm/en"
   },
   {
     "flag": "🇹🇻",
@@ -1119,7 +1119,7 @@ window.JUNI_VISA_COUNTRIES = [
     "flag": "🇺🇾",
     "country": "Uruguay",
     "region": "Americas",
-    "visa_apply_url": "https://www.gub.uy/ministerio-relaciones-exteriores/visas"
+    "visa_apply_url": "https://www.gub.uy/ministerio-relaciones-exteriores/tematica/visas"
   },
   {
     "flag": "🇺🇿",
@@ -1137,7 +1137,7 @@ window.JUNI_VISA_COUNTRIES = [
     "flag": "🇻🇦",
     "country": "Vatican City",
     "region": "Europe",
-    "visa_apply_url": "https://www.vatican.va/roman_curia/secretariat_state/documents/rc_seg-st_19830218_convenzione_schengen_en.html"
+    "visa_apply_url": "https://vistoperitalia.esteri.it/home/en"
   },
   {
     "flag": "🇻🇪",
