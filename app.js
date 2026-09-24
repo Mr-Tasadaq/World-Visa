@@ -1,9 +1,9 @@
 const all = Array.isArray(window.JUNI_VISA_COUNTRIES) ? window.JUNI_VISA_COUNTRIES : [];
 const $ = id => document.getElementById(id);
 const grid = $("grid"), search = $("search"), clearBtn = $("clear"), count = $("count");
-const empty = $("empty"), regionsEl = $("regions"), themeBtn = $("theme"), topBtn = $("top"), langSel = $("lang");
+const empty = $("empty"), regionsEl = $("regions"), themeBtn = $("theme"), topBtn = $("top"), langSel = $("lang"), installBtn = $("install");
 const REGIONS = ["All", "Africa", "Americas", "Asia", "Europe", "Oceania"];
-let region = "All", timer, lang = "en";
+let region = "All", timer, lang = "en", deferredInstallPrompt = null;
 
 function load(k) { try { return localStorage.getItem(k); } catch { return null; } }
 function save(k, v) { try { localStorage.setItem(k, v); } catch {} }
@@ -11,7 +11,7 @@ function save(k, v) { try { localStorage.setItem(k, v); } catch {} }
 let favs;
 try { favs = new Set(JSON.parse(load("wv_favs") || "[]")); } catch { favs = new Set(); }
 
-// ---------- language ----------
+// ---------- install ----------\naddEventListener("beforeinstallprompt", e => {\n  e.preventDefault();\n  deferredInstallPrompt = e;\n  installBtn.hidden = false;\n});\ninstallBtn.addEventListener("click", async () => {\n  if (!deferredInstallPrompt) return;\n  deferredInstallPrompt.prompt();\n  try { await deferredInstallPrompt.userChoice; } catch {}\n  deferredInstallPrompt = null;\n  installBtn.hidden = true;\n});\naddEventListener("appinstalled", () => {\n  deferredInstallPrompt = null;\n  installBtn.hidden = true;\n});\n\n// ---------- language ----------
 const t = (key, vars = {}) => {
   let s = (WV_I18N[lang] || {})[key] ?? WV_I18N.en[key];
   if (typeof s !== "string") return s;
