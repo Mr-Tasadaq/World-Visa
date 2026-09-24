@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Language Test — World Visa</title>
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 0; padding: 16px; background: #f5f7fa; color: #1a1a2e; }
+    h1 { font-size: 1.2rem; margin-bottom: 8px; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.8rem; }
+    th, td { border: 1px solid #cbd5e1; padding: 6px 8px; text-align: start; vertical-align: top; }
+    th { background: #e2e8f0; position: sticky; top: 0; }
+    th:first-child, td:first-child { font-weight: 600; background: #f1f5f9; white-space: nowrap; }
+    .missing { background: #fee2e2; }
+    .rtl { direction: rtl; }
+  </style>
+</head>
+<body>
+  <h1>Language Test — All 25 Languages × All Keys</h1>
+  <p>If a cell is red, that key is missing for that language.</p>
+  <table id="test-table"></table>
+
+  <script src="countries.js"></script>
+  <script src="i18n.js"></script>
+  <script src="i18n-more.js"></script>
+  <script>
+    (function () {
+      var I18N = {};
+      Object.assign(I18N, window.JUNI_VISA_I18N || {});
+      Object.assign(I18N, window.JUNI_VISA_I18N_MORE || {});
+
+      var RTL = ["ur", "ar", "fa"];
+      var langCodes = Object.keys(I18N).sort();
+      var enKeys = Object.keys(I18N["en"] || {}).sort();
+
+      var table = document.getElementById("test-table");
+
+      // Header row
+      var thead = document.createElement("thead");
+      var hrow = document.createElement("tr");
+      var h0 = document.createElement("th");
+      h0.textContent = "Key";
+      hrow.appendChild(h0);
+      langCodes.forEach(function (code) {
+        var th = document.createElement("th");
+        th.textContent = code;
+        if (RTL.indexOf(code) !== -1) th.className = "rtl";
+        hrow.appendChild(th);
+      });
+      thead.appendChild(hrow);
+      table.appendChild(thead);
+
+      // Body
+      var tbody = document.createElement("tbody");
+      enKeys.forEach(function (key) {
+        var tr = document.createElement("tr");
+        var td0 = document.createElement("td");
+        td0.textContent = key;
+        tr.appendChild(td0);
+        langCodes.forEach(function (code) {
+          var td = document.createElement("td");
+          var val = I18N[code] && I18N[code][key];
+          if (!val) {
+            td.className = "missing";
+            td.textContent = "MISSING";
+          } else {
+            td.textContent = val;
+            if (RTL.indexOf(code) !== -1) td.className = "rtl";
+          }
+          tr.appendChild(td);
+        });
+        tbody.appendChild(tr);
+      });
+      table.appendChild(tbody);
+
+      // Summary
+      var missing = 0;
+      langCodes.forEach(function (code) {
+        enKeys.forEach(function (key) {
+          if (!I18N[code] || !I18N[code][key]) missing++;
+        });
+      });
+      var p = document.createElement("p");
+      p.style.marginTop = "12px";
+      p.style.fontWeight = "bold";
+      p.textContent = missing === 0
+        ? "✓ All " + langCodes.length + " languages have all " + enKeys.length + " keys."
+        : "✗ " + missing + " missing key(s) found.";
+      document.body.appendChild(p);
+    })();
+  </script>
+</body>
+</html>

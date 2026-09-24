@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>World Visa</title>
+  <meta name="description" content="Official visa information for 195 countries">
+  <link rel="icon" type="image/svg+xml" href="world-visa-logo.svg">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="app-header">
+    <div class="header-inner">
+      <div class="header-left">
+        <img src="world-visa-logo.svg" alt="World Visa logo" class="logo" width="40" height="40">
+        <div class="header-titles">
+          <h1 id="app-title">World Visa</h1>
+          <p id="app-subtitle">Official visa information for 195 countries</p>
+        </div>
+      </div>
+      <div class="header-right">
+        <button id="lang-btn" class="icon-btn" aria-label="Choose language" aria-expanded="false">
+          <span aria-hidden="true">🌐</span>
+          <span id="lang-current">EN</span>
+        </button>
+        <button id="theme-btn" class="icon-btn" aria-label="Dark mode">
+          <span id="theme-icon" aria-hidden="true">🌙</span>
+        </button>
+      </div>
+    </div>
+    <div id="lang-menu" class="lang-menu" hidden></div>
+  </header>
+
+  <div class="toolbar">
+    <input type="search" id="search" class="search-input" placeholder="Search countries..."
+           autocomplete="off" aria-label="Search countries">
+    <div class="region-buttons" id="region-buttons"></div>
+  </div>
+
+  <p id="results-count" class="results-count" aria-live="polite"></p>
+
+  <main id="cards" class="cards"></main>
+
+  <p id="no-results" class="no-results" hidden></p>
+
+  <div class="translate-link-wrap">
+    <button id="translate-btn" class="link-btn"></button>
+  </div>
+
+  <dialog id="translate-dialog" class="translate-dialog">
+    <h2 id="translate-title" class="dialog-title"></h2>
+    <p id="translate-body" class="dialog-body"></p>
+    <button id="translate-close" class="btn-primary"></button>
+  </dialog>
+
+  <footer class="app-footer">
+    <p id="footer-text"></p>
+  </footer>
+
+  <button id="back-to-top" class="back-to-top" hidden aria-label="Back to top">
+    <span aria-hidden="true">↑</span>
+  </button>
+
+  <script src="countries.js"></script>
+  <script src="i18n.js"></script>
+  <script src="i18n-more.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
